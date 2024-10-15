@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.select-radio-option input[type="radio"]:checked + label {
+    @apply bg-[#DCD2FE] text-black;
+}
+.option-label {
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+.add-to-cart-btn{
+    border-radius: 8px;
+    background: linear-gradient(90deg, #E56EEB -13.59%, #8863FB 111.41%);
+    color: #ffffff;
+}
