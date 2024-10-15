@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
+  </head>
+  <body>
+    <header class="bg-white" x-data="{ isMenuOpen: false }">
+      <nav class="mx-auto flex container items-center justify-between p-6 lg:px-16" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">Your Company</span>
+            <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button type="button"     @click="isMenuOpen = true"
+          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-12">
+          <div class="relative" x-data="{ open: false }"  @mouseenter="open = true" @mouseleave="open = false">
+            <button @click="open = !open" type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
+              Bangle
+              <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+              </svg>
+            </button>
+    
+            <div
+            x-show="open" 
+            @click.away="open = false" 
+            class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 translate-y-1"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-1">
+              <div class="p-4">
+                <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                  <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg group-hover:bg-white">
+                   <div class="overflow-hidden">
+                    <img class="siz-6 rounded-lg" src="assets/images/bangle.png" alt="">
+                   </div>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="shop.html" class="block font-semibold text-gray-900">
+                      Oval Bangles
+                      <span class="absolute inset-0"></span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                  <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg group-hover:bg-white">
+                   <div class="overflow-hidden">
+                    <img class="siz-6 rounded-lg" src="assets/images/bangle.png" alt="">
+                   </div>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="shop.html" class="block font-semibold text-gray-900">
+                      Round Bangles
+                      <span class="absolute inset-0"></span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                  <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg group-hover:bg-white">
+                   <div class="overflow-hidden">
+                    <img class="siz-6 rounded-lg" src="assets/images/bangle.png" alt="">
+                   </div>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="shop.html" class="block font-semibold text-gray-900">
+                      Spring Bangles
+                      <span class="absolute inset-0"></span>
+                    </a>
+                  </div>
+                </div>
+                
+              </div>
+             
+            </div>
+          </div>
+    
+          <a href="shop.html" class="text-sm font-semibold leading-6 text-gray-900">Bracelets</a>
+          <a href="shop.html" class="text-sm font-semibold leading-6 text-gray-900">Necklace</a>
+          <a href="shop.html" class="text-sm font-semibold leading-6 text-gray-900">Pendant</a>
+          <a href="shop.html" class="text-sm font-semibold leading-6 text-gray-900">Chains with Pendant</a>
+          <a href="shop.html" class="text-sm font-semibold leading-6 text-gray-900">Rings</a>
+
+          <div class="relative" x-data="{ open: false }"  @mouseenter="open = true" @mouseleave="open = false">
+            <button @click="open = !open" type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900" aria-expanded="false">
+              Studs
+              <svg class="h-5 w-5 flex-none text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" data-slot="icon">
+                <path fill-rule="evenodd" d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" />
+              </svg>
+            </button>
+    
+            <div
+            x-show="open" 
+            @click.away="open = false" 
+            class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 translate-y-1"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 translate-y-1">
+              <div class="p-4">
+                <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                  <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg group-hover:bg-white">
+                   <div class="overflow-hidden">
+                    <img class="siz-6 rounded-lg" src="assets/images/bangle.png" alt="">
+                   </div>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="shop.html" class="block font-semibold text-gray-900">
+                      Studs
+                      <span class="absolute inset-0"></span>
+                    </a>
+                  </div>
+                </div>
+
+                <div class="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50">
+                  <div class="flex h-11 w-11 flex-none items-center justify-center rounded-lg group-hover:bg-white">
+                   <div class="overflow-hidden">
+                    <img class="siz-6 rounded-lg" src="assets/images/bangle.png" alt="">
+                   </div>
+                  </div>
+                  <div class="flex-auto">
+                    <a href="shop.html" class="block font-semibold text-gray-900">
+                      Stud drops
+                      <span class="absolute inset-0"></span>
+                    </a>
+                  </div>
+                </div>
+
+              
+                
+              </div>
+             
+            </div>
+          </div>
+
+        </div>
+        <div class="hidden lg:flex gap-2 lg:flex-1 lg:justify-end">
+          <a href="#" class="text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
+            </svg>            
+          </a>
+          <a href="#" class="text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path d="m11.645 20.91-.007-.003-.022-.012a15.247 15.247 0 0 1-.383-.218 25.18 25.18 0 0 1-4.244-3.17C4.688 15.36 2.25 12.174 2.25 8.25 2.25 5.322 4.714 3 7.688 3A5.5 5.5 0 0 1 12 5.052 5.5 5.5 0 0 1 16.313 3c2.973 0 5.437 2.322 5.437 5.25 0 3.925-2.438 7.111-4.739 9.256a25.175 25.175 0 0 1-4.244 3.17 15.247 15.247 0 0 1-.383.219l-.022.012-.007.004-.003.001a.752.752 0 0 1-.704 0l-.003-.001Z" />
+            </svg>
+            
+          </a>
+          <a href="#" class="text-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+              <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+            </svg>
+            
+          </a>
+
+        </div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div 
+      x-show="isMenuOpen"
+      @click.away="isMenuOpen = false" 
+      x-transition
+      class="lg:hidden fixed inset-0 z-10 bg-black bg-opacity-50"
+      role="dialog"
+      aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-10"></div>
+        <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
+            <a href="#" class="-m-1.5 p-1.5">
+              <span class="sr-only">Your Company</span>
+              <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
+            </a>
+            <button   @click="isMenuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <div x-data="{ isOpen: false }" class="-mx-3">
+                  <button
+                    @click="isOpen = !isOpen"
+                    type="button"
+                    class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    aria-controls="disclosure-1"
+                    :aria-expanded="isOpen"
+                  >
+                    Product
+                    <!-- Expand/collapse icon -->
+                    <svg
+                      :class="isOpen ? 'rotate-180' : ''"
+                      class="h-5 w-5 flex-none transition-transform duration-300"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                
+                  <!-- 'Product' sub-menu -->
+                  <div
+                    x-show="isOpen"
+                    x-transition
+                    class="mt-2 space-y-2"
+                    id="disclosure-1"
+                  >
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Analytics</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Engagement</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Security</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Integrations</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Automations</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Watch demo</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact sales</a>
+                  </div>
+                </div>
+                
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Features</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Marketplace</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Company</a>
+              </div>
+              <div class="py-6">
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Log in</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+
+    
+    <content class="bg-white">
+      <div x-data="{ open: false }" @keydown.window.escape="open = false">
+        <!-- Mobile filter dialog -->
+
+        <div
+          x-show="open"
+          class="relative z-40 lg:hidden"
+          x-description="Off-canvas menu for mobile, show/hide based on off-canvas menu state."
+          x-ref="dialog"
+          aria-modal="true"
+        >
+          <div
+            x-show="open"
+            x-transition:enter="transition-opacity ease-linear duration-300"
+            x-transition:enter-start="opacity-0"
+            x-transition:enter-end="opacity-100"
+            x-transition:leave="transition-opacity ease-linear duration-300"
+            x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0"
+            x-description="Off-canvas menu backdrop, show/hide based on off-canvas menu state."
+            class="fixed inset-0 bg-black bg-opacity-25"
+          ></div>
+
+          <div class="fixed inset-0 z-40 flex">
+            <div
+              x-show="open"
+              x-transition:enter="transition ease-in-out duration-300 transform"
+              x-transition:enter-start="translate-x-full"
+              x-transition:enter-end="translate-x-0"
+              x-transition:leave="transition ease-in-out duration-300 transform"
+              x-transition:leave-start="translate-x-0"
+              x-transition:leave-end="translate-x-full"
+              class="relative ml-auto flex h-full w-full max-w-xs flex-col overflow-y-auto bg-white py-4 pb-6 shadow-xl"
+              @click.away="open = false"
+            >
+              <div class="flex items-center justify-between px-4">
+                <h2 class="text-lg font-medium text-gray-900">Filters</h2>
+                <button
+                  type="button"
+                  class="-mr-2 flex h-10 w-10 items-center justify-center p-2 text-gray-400 hover:text-gray-500"
+                  @click="open = false"
+                >
+                  <span class="sr-only">Close menu</span>
+                  <svg
+                    class="h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6 18L18 6M6 6l12 12"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+          
+              <!-- Filters -->
+              <form class="mt-4">
+                <!-- Product Type -->
+                <div x-data="{ open: false }" class="border-t border-gray-200 pt-4 pb-4">
+                  <fieldset>
+                    <legend class="w-full px-2">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500"
+                        aria-controls="filter-section-0"
+                        @click="open = !open"
+                        aria-expanded="false"
+                        x-bind:aria-expanded="open.toString()"
+                      >
+                        <span class="text-sm font-medium text-gray-900">Product Type</span>
+                        <span class="ml-6 flex h-7 items-center">
+                          <svg
+                            class="rotate-0 h-5 w-5 transform"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </span>
+                      </button>
+                    </legend>
+                    <div class="px-4 pt-4 pb-2" id="filter-section-0" x-show="open">
+                      <div class="space-y-6">
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-0"
+                            name="product-type[]"
+                            value="rings"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-0" class="ml-3 text-sm text-gray-500">Rings</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-1"
+                            name="product-type[]"
+                            value="earrings"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-1" class="ml-3 text-sm text-gray-500">Earrings</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-2"
+                            name="product-type[]"
+                            value="necklaces"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-2" class="ml-3 text-sm text-gray-500">Necklaces</label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+          
+                <!-- Carat Weight -->
+                <div x-data="{ open: false }" class="border-t border-gray-200 pt-4 pb-4">
+                  <fieldset>
+                    <legend class="w-full px-2">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500"
+                        aria-controls="filter-section-1"
+                        @click="open = !open"
+                        aria-expanded="false"
+                        x-bind:aria-expanded="open.toString()"
+                      >
+                        <span class="text-sm font-medium text-gray-900">Carat Weight</span>
+                        <span class="ml-6 flex h-7 items-center">
+                          <svg
+                            class="rotate-0 h-5 w-5 transform"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </span>
+                      </button>
+                    </legend>
+                    <div class="px-4 pt-4 pb-2" id="filter-section-1" x-show="open">
+                      <div class="space-y-6">
+                        <div class="flex items-center">
+                          <input
+                            id="carat-weight-0"
+                            name="carat-weight[]"
+                            value="below-0.5"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="carat-weight-0" class="ml-3 text-sm text-gray-500">Below 0.5 carat</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="carat-weight-1"
+                            name="carat-weight[]"
+                            value="0.5-1"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="carat-weight-1" class="ml-3 text-sm text-gray-500">0.5 - 1 carat</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="carat-weight-2"
+                            name="carat-weight[]"
+                            value="above-1"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="carat-weight-2" class="ml-3 text-sm text-gray-500">Above 1 carat</label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+          
+                <!-- Price Range -->
+                <div x-data="{ open: false }" class="border-t border-gray-200 pt-4 pb-4">
+                  <fieldset>
+                    <legend class="w-full px-2">
+                      <button
+                        type="button"
+                        class="flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500"
+                        aria-controls="filter-section-2"
+                        @click="open = !open"
+                        aria-expanded="false"
+                        x-bind:aria-expanded="open.toString()"
+                      >
+                        <span class="text-sm font-medium text-gray-900">Price Range</span>
+                        <span class="ml-6 flex h-7 items-center">
+                          <svg
+                            class="rotate-0 h-5 w-5 transform"
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            aria-hidden="true"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z"
+                              clip-rule="evenodd"
+                            ></path>
+                          </svg>
+                        </span>
+                      </button>
+                    </legend>
+                    <div class="px-4 pt-4 pb-2" id="filter-section-2" x-show="open">
+                      <div class="space-y-6">
+                        <div class="flex items-center">
+                          <input
+                            id="price-range-0"
+                            name="price-range[]"
+                            value="below-5000"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="price-range-0" class="ml-3 text-sm text-gray-500">Below ₹5000</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="price-range-1"
+                            name="price-range[]"
+                            value="5000-10000"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="price-range-1" class="ml-3 text-sm text-gray-500">₹5000 - ₹10000</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="price-range-2"
+                            name="price-range[]"
+                            value="above-10000"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="price-range-2" class="ml-3 text-sm text-gray-500">Above ₹10000</label>
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+
+        <div class="shadow-sm py-10 bg-[#F6F3F9]">
+          <div class="container mx-auto px-4 sm:px-6 lg:px-16">
+            <div>
+              <h1 class="text-2xl font-bold tracking-tight text-gray-900">
+                Jewellery  
+              </h1>
+            </div>
+            <!-- <p class="mt-4 text-base text-gray-500">
+              Checkout out the latest release of Basic Tees, new and improved
+              with four openings!
+            </p> -->
+          </div>
+        </div>
+
+        <main class="mx-auto container pb-16 px-4 sm:pb-24 sm:px-6 lg:px-16">
+          
+
+          <div class="pt-12 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
+            <aside>
+              <h2 class="sr-only">Filters</h2>
+            
+              <button
+                type="button"
+                class="inline-flex items-center lg:hidden"
+                @click="open = true"
+              >
+                <span class="text-sm font-medium text-gray-700">Filters</span>
+                <svg
+                  class="ml-1 h-5 w-5 flex-shrink-0 text-gray-400"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
+                  ></path>
+                </svg>
+              </button>
+            
+              <div class="hidden lg:block">
+                <form class="space-y-10">
+            
+                  <!-- Filter #1: Product Type -->
+                  <div>
+                    <fieldset>
+                      <legend class="block text-sm font-medium text-gray-900">Product Type</legend>
+                      <hr class="my-4" />
+                      <div class="space-y-3">
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-bangle"
+                            name="product-type[]"
+                            value="Bangle"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-bangle" class="ml-3 text-sm text-gray-600">Bangle</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-bracelet"
+                            name="product-type[]"
+                            value="Bracelet"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-bracelet" class="ml-3 text-sm text-gray-600">Bracelet</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-necklace"
+                            name="product-type[]"
+                            value="Necklace"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-necklace" class="ml-3 text-sm text-gray-600">Necklace</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-pendant"
+                            name="product-type[]"
+                            value="Pendant"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-pendant" class="ml-3 text-sm text-gray-600">Pendant</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-chain-pendant"
+                            name="product-type[]"
+                            value="Chain with Pendant"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-chain-pendant" class="ml-3 text-sm text-gray-600">Chain with Pendant</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-rings"
+                            name="product-type[]"
+                            value="Rings"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-rings" class="ml-3 text-sm text-gray-600">Rings</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="product-type-studs"
+                            name="product-type[]"
+                            value="Studs"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="product-type-studs" class="ml-3 text-sm text-gray-600">Studs</label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+            
+                  <!-- Filter #2: Carat Weight -->
+                  <div>
+                    <fieldset>
+                      <legend class="block text-sm font-medium text-gray-900">Carat Weight</legend>
+                      <hr class="my-4" />
+                      <div class="space-y-3">
+                        <div class="flex items-center">
+                          <input
+                            id="carat-weight-0"
+                            name="carat-weight[]"
+                            value="0.01-0.1"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="carat-weight-0" class="ml-3 text-sm text-gray-600">0.01 Carat to 0.1 Carat</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="carat-weight-1"
+                            name="carat-weight[]"
+                            value="0.11-0.5"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="carat-weight-1" class="ml-3 text-sm text-gray-600">0.11 Carat to 0.5 Carat</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="carat-weight-2"
+                            name="carat-weight[]"
+                            value="0.51-1"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="carat-weight-2" class="ml-3 text-sm text-gray-600">0.51 Carat to 1 Carat</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="carat-weight-3"
+                            name="carat-weight[]"
+                            value="1"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="carat-weight-3" class="ml-3 text-sm text-gray-600">1 Carat sets</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="carat-weight-4"
+                            name="carat-weight[]"
+                            value="above-1"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="carat-weight-4" class="ml-3 text-sm text-gray-600">Above 1 Carat</label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+            
+                  <!-- Filter #3: Price Range -->
+                  <div>
+                    <fieldset>
+                      <legend class="block text-sm font-medium text-gray-900">Price Range</legend>
+                      <hr class="my-4" />
+                      <div class="space-y-3">
+                        <div class="flex items-center">
+                          <input
+                            id="price-range-0"
+                            name="price-range[]"
+                            value="10001-15000"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="price-range-0" class="ml-3 text-sm text-gray-600">₹10,001 - ₹15,000</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="price-range-1"
+                            name="price-range[]"
+                            value="5001-10000"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="price-range-1" class="ml-3 text-sm text-gray-600">₹5,001 - ₹10,000</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="price-range-2"
+                            name="price-range[]"
+                            value="15001-20000"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="price-range-2" class="ml-3 text-sm text-gray-600">₹15,001 - ₹20,000</label>
+                        </div>
+                        <div class="flex items-center">
+                          <input
+                            id="price-range-3"
+                            name="price-range[]"
+                            value="above-20001"
+                            type="checkbox"
+                            class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                          />
+                          <label for="price-range-3" class="ml-3 text-sm text-gray-600">Above ₹20,001</label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+            
+                </form>
+              </div>
+            </aside>
+            
+
+            <!-- Product grid -->
+            <div class="mt-6 lg:col-span-2 lg:mt-0 xl:col-span-3">
+              <div class="grid grid-cols-2 gap-y-10 gap-x-4 sm:grid-cols-2 xl:grid-cols-3 lg:gap-x-6">
+        
+                <a href="#" class="group text-sm">
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="assets/images/product1.jpg" alt="" class="h-80 w-full object-cover">
+                  </div>
+                  <h3 class="mt-4 font-medium text-gray-900">Nomad Pouch</h3>
+                  <p class="italic text-gray-500">White and Black</p>
+                  <p class="mt-2 font-medium text-gray-900">$50</p>
+                </a>
+
+                <a href="#" class="group text-sm">
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="assets/images/product1.jpg" alt="" class="h-80 w-full object-cover">
+                  </div>
+                  <h3 class="mt-4 font-medium text-gray-900">Nomad Pouch</h3>
+                  <p class="italic text-gray-500">White and Black</p>
+                  <p class="mt-2 font-medium text-gray-900">$50</p>
+                </a>
+
+                <a href="#" class="group text-sm">
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="assets/images/product1.jpg" alt="" class="h-80 w-full object-cover">
+                  </div>
+                  <h3 class="mt-4 font-medium text-gray-900">Nomad Pouch</h3>
+                  <p class="italic text-gray-500">White and Black</p>
+                  <p class="mt-2 font-medium text-gray-900">$50</p>
+                </a>
+
+                <a href="#" class="group text-sm">
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="assets/images/product1.jpg" alt="" class="h-80 w-full object-cover">
+                  </div>
+                  <h3 class="mt-4 font-medium text-gray-900">Nomad Pouch</h3>
+                  <p class="italic text-gray-500">White and Black</p>
+                  <p class="mt-2 font-medium text-gray-900">$50</p>
+                </a>
+
+
+                <a href="#" class="group text-sm">
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="assets/images/product1.jpg" alt="" class="h-80 w-full object-cover">
+                  </div>
+                  <h3 class="mt-4 font-medium text-gray-900">Nomad Pouch</h3>
+                  <p class="italic text-gray-500">White and Black</p>
+                  <p class="mt-2 font-medium text-gray-900">$50</p>
+                </a>
+
+
+                <a href="#" class="group text-sm">
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="assets/images/product1.jpg" alt="" class="h-80 w-full object-cover">
+                  </div>
+                  <h3 class="mt-4 font-medium text-gray-900">Nomad Pouch</h3>
+                  <p class="italic text-gray-500">White and Black</p>
+                  <p class="mt-2 font-medium text-gray-900">$50</p>
+                </a>
+
+
+                <a href="#" class="group text-sm">
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="assets/images/product1.jpg" alt="" class="h-80 w-full object-cover">
+                  </div>
+                  <h3 class="mt-4 font-medium text-gray-900">Nomad Pouch</h3>
+                  <p class="italic text-gray-500">White and Black</p>
+                  <p class="mt-2 font-medium text-gray-900">$50</p>
+                </a>
+
+
+                <a href="#" class="group text-sm">
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="assets/images/product1.jpg" alt="" class="h-80 w-full object-cover">
+                  </div>
+                  <h3 class="mt-4 font-medium text-gray-900">Nomad Pouch</h3>
+                  <p class="italic text-gray-500">White and Black</p>
+                  <p class="mt-2 font-medium text-gray-900">$50</p>
+                </a>
+
+                <a href="#" class="group text-sm">
+                  <div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                    <img src="assets/images/product1.jpg" alt="" class="h-80 w-full object-cover">
+                  </div>
+                  <h3 class="mt-4 font-medium text-gray-900">Nomad Pouch</h3>
+                  <p class="italic text-gray-500">White and Black</p>
+                  <p class="mt-2 font-medium text-gray-900">$50</p>
+                </a>
+              
+               
+              
+            </div>
+            </div>
+
+            
+          </div>
+        </main>
+      </div>
+    </content>
+
+    <footer class="bg-[#F6EFF6]" aria-labelledby="footer-heading">
+      <h2 id="footer-heading" class="sr-only">Footer</h2>
+      <div class="mx-auto container py-12 px-4 sm:px-6 lg:py-16 lg:px-16">
+        <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+          <div class="grid grid-cols-2 gap-8 xl:col-span-2">
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-base font-medium text-gray-900">Solutions</h3>
+                <ul role="list" class="mt-4 space-y-4">
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Marketing</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Analytics</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Commerce</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Insights</a>
+                    </li>
+                  
+                </ul>
+              </div>
+              <div class="mt-12 md:mt-0">
+                <h3 class="text-base font-medium text-gray-900">Support</h3>
+                <ul role="list" class="mt-4 space-y-4">
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Pricing</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Documentation</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Guides</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">API Status</a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+            <div class="md:grid md:grid-cols-2 md:gap-8">
+              <div>
+                <h3 class="text-base font-medium text-gray-900">Company</h3>
+                <ul role="list" class="mt-4 space-y-4">
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">About</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Blog</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Jobs</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Press</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Partners</a>
+                    </li>
+                  
+                </ul>
+              </div>
+              <div class="mt-12 md:mt-0">
+                <h3 class="text-base font-medium text-gray-900">Legal</h3>
+                <ul role="list" class="mt-4 space-y-4">
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Claim</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Privacy</a>
+                    </li>
+                  
+                    <li>
+                      <a href="#" class="text-base text-gray-500 hover:text-gray-900">Terms</a>
+                    </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="mt-8 xl:mt-0">
+            <h3 class="text-base font-medium text-gray-900">Subscribe to our newsletter</h3>
+            <p class="mt-4 text-base text-gray-500">The latest news, articles, and resources, sent to your inbox weekly.</p>
+            <form class="mt-4 sm:flex sm:max-w-md">
+              <label for="email-address" class="sr-only">Email address</label>
+              <input type="email" name="email-address" id="email-address" autocomplete="email" required="" class="w-full min-w-0 appearance-none rounded-md border border-gray-300 bg-white py-2 px-4 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:border-indigo-500 focus:placeholder-gray-400 focus:outline-none focus:ring-indigo-500" placeholder="Enter your email">
+              <div class="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                <button type="submit" class="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-base font-medium text-white hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Subscribe</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="mt-8 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
+          <div class="flex space-x-6 md:order-2">
+            
+              <a href="#" class="text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Facebook</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+  </svg>
+              </a>
+            
+              <a href="#" class="text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Instagram</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+  </svg>
+              </a>
+            
+              <a href="#" class="text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Twitter</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+  </svg>
+              </a>
+            
+              <a href="#" class="text-gray-400 hover:text-gray-500">
+                <span class="sr-only">GitHub</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+  </svg>
+              </a>
+            
+              <a href="#" class="text-gray-400 hover:text-gray-500">
+                <span class="sr-only">Dribbble</span>
+                <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path fill-rule="evenodd" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10c5.51 0 10-4.48 10-10S17.51 2 12 2zm6.605 4.61a8.502 8.502 0 011.93 5.314c-.281-.054-3.101-.629-5.943-.271-.065-.141-.12-.293-.184-.445a25.416 25.416 0 00-.564-1.236c3.145-1.28 4.577-3.124 4.761-3.362zM12 3.475c2.17 0 4.154.813 5.662 2.148-.152.216-1.443 1.941-4.48 3.08-1.399-2.57-2.95-4.675-3.189-5A8.687 8.687 0 0112 3.475zm-3.633.803a53.896 53.896 0 013.167 4.935c-3.992 1.063-7.517 1.04-7.896 1.04a8.581 8.581 0 014.729-5.975zM3.453 12.01v-.26c.37.01 4.512.065 8.775-1.215.25.477.477.965.694 1.453-.109.033-.228.065-.336.098-4.404 1.42-6.747 5.303-6.942 5.629a8.522 8.522 0 01-2.19-5.705zM12 20.547a8.482 8.482 0 01-5.239-1.8c.152-.315 1.888-3.656 6.703-5.337.022-.01.033-.01.054-.022a35.318 35.318 0 011.823 6.475 8.4 8.4 0 01-3.341.684zm4.761-1.465c-.086-.52-.542-3.015-1.659-6.084 2.679-.423 5.022.271 5.314.369a8.468 8.468 0 01-3.655 5.715z" clip-rule="evenodd"></path>
+  </svg>
+              </a>
+            
+          </div>
+          <p class="mt-8 text-base text-gray-400 md:order-1 md:mt-0">© 2024 Your Company, Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
