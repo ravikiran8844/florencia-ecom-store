@@ -11,23 +11,24 @@
     ></script>
   </head>
   <body>
-    <header class="bg-white" x-data="{ isMenuOpen: false }">
+    <header class="bg-white shadow-lg sticky top-0 z-10" x-data="{ isMenuOpen: false }">
       <nav class="mx-auto flex container items-center justify-between p-6 lg:px-16" aria-label="Global">
         <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
+          <div class="flex lg:hidden">
+            <button type="button"     @click="isMenuOpen = true"
+            class="-m-2.5 me-1 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Open main menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              </svg>
+            </button>
+          </div>
+          <a href="#" class="-m-1.5 p-1.5 max-lg:absolute max-lg:left-[50%]  max-lg:transform  max-lg:translate-x-[-50%] lg:relative">
             <span class="sr-only">Your Company</span>
             <img class="h-8 w-auto" src="https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600" alt="">
           </a>
         </div>
-        <div class="flex lg:hidden">
-          <button type="button"     @click="isMenuOpen = true"
-          class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-            <span class="sr-only">Open main menu</span>
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-          </button>
-        </div>
+        
         <div class="hidden lg:flex lg:gap-x-12">
           <div class="relative" x-data="{ open: false }"  @mouseenter="open = true" @mouseleave="open = false">
             <button @click="open = !open" type="button" class="flex items-center gap-x-1 text-sm font-semibold leading-6 text-purple-900 border-b-2 border-transparent hover:text-purple-600 hover:border-purple-600" aria-expanded="false">
@@ -150,7 +151,7 @@
           </div>
 
         </div>
-        <div class="hidden lg:flex gap-2 lg:flex-1 lg:justify-end">
+        <div class="flex gap-2 lg:flex-1 lg:justify-end">
           <a href="#" class="text-sm text-purple-900">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
               <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM3.751 20.105a8.25 8.25 0 0 1 16.498 0 .75.75 0 0 1-.437.695A18.683 18.683 0 0 1 12 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 0 1-.437-.695Z" clip-rule="evenodd" />
@@ -205,7 +206,7 @@
                     aria-controls="disclosure-1"
                     :aria-expanded="isOpen"
                   >
-                    Product
+                  Bangle
                     <!-- Expand/collapse icon -->
                     <svg
                       :class="isOpen ? 'rotate-180' : ''"
@@ -229,23 +230,61 @@
                     class="mt-2 space-y-2"
                     id="disclosure-1"
                   >
-                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Analytics</a>
-                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Engagement</a>
-                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Security</a>
-                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Integrations</a>
-                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Automations</a>
-                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Watch demo</a>
-                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Contact sales</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Oval Bangles</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Round Bangles</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Spring Bangles</a>
+
                   </div>
                 </div>
                 
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50">Features</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50">Marketplace</a>
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50">Company</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50">Bracelets</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50">Necklace
+                </a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50">Pendant</a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50">Chains with Pendant
+                </a>
+                <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50">Rings</a>
+
+
+                <div x-data="{ isOpen: false }" class="-mx-3">
+                  <button
+                    @click="isOpen = !isOpen"
+                    type="button"
+                    class="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50"
+                    aria-controls="disclosure-1"
+                    :aria-expanded="isOpen"
+                  >
+                  Studs
+                    <!-- Expand/collapse icon -->
+                    <svg
+                      :class="isOpen ? 'rotate-180' : ''"
+                      class="h-5 w-5 flex-none transition-transform duration-300"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                  </button>
+                
+                  <!-- 'Product' sub-menu -->
+                  <div
+                    x-show="isOpen"
+                    x-transition
+                    class="mt-2 space-y-2"
+                    id="disclosure-1"
+                  >
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Studs</a>
+                    <a href="#" class="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-purple-900 hover:bg-gray-50">Stud drops</a>
+
+                  </div>
+                </div>
               </div>
-              <div class="py-6">
-                <a href="#" class="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-purple-900 hover:bg-gray-50">Log in</a>
-              </div>
+             
             </div>
           </div>
         </div>
@@ -571,27 +610,17 @@
           </div>
           
 
-          <div class="pt-12 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
+          <div class="lg:pt-10 lg:grid lg:grid-cols-3 lg:gap-x-8 xl:grid-cols-4">
             <aside>
               <h2 class="sr-only">Filters</h2>
             
               <button
                 type="button"
-                class="inline-flex items-center lg:hidden"
+                class="inline-flex items-center rounded-lg py-2 px-4 lg:hidden fixed bottom-0 left-[50%] translate-x-[-50%] transform  bg-[#4F3267] text-white"
                 @click="open = true"
               >
-                <span class="text-lg font-medium text-gray-700">Filters</span>
-                <svg
-                  class="ml-1 h-5 w-5 flex-shrink-0 text-gray-400"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                  fill="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M10.75 4.75a.75.75 0 00-1.5 0v4.5h-4.5a.75.75 0 000 1.5h4.5v4.5a.75.75 0 001.5 0v-4.5h4.5a.75.75 0 000-1.5h-4.5v-4.5z"
-                  ></path>
-                </svg>
+                <span class="text-md  uppercase font-medium text-white">Filters</span>
+               
               </button>
             
               <div class="hidden lg:block">
