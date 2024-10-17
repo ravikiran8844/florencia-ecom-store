@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html,body{
+    @apply bg-white;
+}
 
 .select-radio-option input[type="radio"]:checked + label {
     @apply bg-[#DCD2FE] text-black;
@@ -24,3 +27,4 @@
   .announcement-slide {
     animation: slide 5s infinite;
   }
+  [x-cloak] { display: none !important; }

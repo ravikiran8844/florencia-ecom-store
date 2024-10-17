@@ -2571,6 +2571,14 @@ html {
   height: 2.75rem;
 }
 
+.h-14 {
+  height: 3.5rem;
+}
+
+.h-16 {
+  height: 4rem;
+}
+
 .h-24 {
   height: 6rem;
 }
@@ -2607,12 +2615,12 @@ html {
   max-height: 460px;
 }
 
-.min-h-screen {
-  min-height: 100vh;
-}
-
 .min-h-8 {
   min-height: 2rem;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-1\/2 {
@@ -3525,6 +3533,11 @@ html {
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 }
 
+html,body {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
 .select-radio-option input[type="radio"]:checked + label {
   --tw-bg-opacity: 1;
   background-color: rgb(220 210 254 / var(--tw-bg-opacity));
@@ -3566,6 +3579,10 @@ html {
 
 .announcement-slide {
   animation: slide 5s infinite;
+}
+
+[x-cloak] {
+  display: none !important;
 }
 
 .hover\:border-purple-600:hover {
