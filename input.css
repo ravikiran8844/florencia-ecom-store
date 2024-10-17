@@ -14,3 +14,13 @@
     background: linear-gradient(90deg, #E56EEB -13.59%, #8863FB 111.41%);
     color: #ffffff;
 }
+
+@keyframes slide {
+    0% { opacity: 0; transform: translateY(-100%); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(100%); }
+  }
+  .announcement-slide {
+    animation: slide 5s infinite;
+  }
