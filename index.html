@@ -82,7 +82,7 @@
           </button>
 
           <div
-            x-show="open"
+            x-cloak   x-show="open"
             @click.away="open = false"
             class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
             x-transition:enter="transition ease-out duration-200"
@@ -213,7 +213,7 @@
           </button>
 
           <div
-            x-show="open"
+            x-cloak   x-show="open"
             @click.away="open = false"
             class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-sm overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
             x-transition:enter="transition ease-out duration-200"
@@ -324,7 +324,7 @@
     </nav>
     <!-- Mobile menu, show/hide based on menu open state. -->
     <div
-      x-show="isMenuOpen"
+      x-cloak   x-show="isMenuOpen"
       @click.away="isMenuOpen = false"
       x-transition
       class="lg:hidden fixed inset-0 z-10 bg-black bg-opacity-50"
@@ -398,7 +398,7 @@
 
                 <!-- 'Product' sub-menu -->
                 <div
-                  x-show="isOpen"
+                  x-cloak   x-show="isOpen"
                   x-transition
                   class="mt-2 space-y-2"
                   id="disclosure-1"
@@ -474,7 +474,7 @@
 
                 <!-- 'Product' sub-menu -->
                 <div
-                  x-show="isOpen"
+                  x-cloak   x-show="isOpen"
                   x-transition
                   class="mt-2 space-y-2"
                   id="disclosure-1"
@@ -664,7 +664,7 @@
 
 
       <div class="relative z-10" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
-        <div x-show="isCartOpen" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+        <div x-cloak   x-show="isCartOpen" class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
 
 
       <div class="absolute inset-0 overflow-hidden">
@@ -672,7 +672,7 @@
           <!-- Slide-over panel -->
           <div 
             class="pointer-events-auto w-screen max-w-md"
-            x-show="isCartOpen"
+            x-cloak   x-show="isCartOpen"
             x-transition:enter="transform transition ease-in-out duration-500 sm:duration-700"
             x-transition:enter-start="translate-x-full"
             x-transition:enter-end="translate-x-0"
