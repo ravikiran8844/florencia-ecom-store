@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinning Stacking Tabs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+
+        .tabs-container {
+            width: 300px;
+            position: relative;
+        }
+
+        .tab {
+            position: absolute;
+            width: 100%;
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .tab:nth-child(1) {
+            top: 0;
+            z-index: 4;
+        }
+
+        .tab:nth-child(2) {
+            top: 30px;
+            z-index: 3;
+        }
+
+        .tab:nth-child(3) {
+            top: 60px;
+            z-index: 2;
+        }
+
+        .tab:nth-child(4) {
+            top: 90px;
+            z-index: 1;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ccc;
+            margin-top: 20px;
+        }
+
+        .active .tab-content {
+            display: block;
+        }
+
+        .active {
+            z-index: 5 !important;
+            top: 0 !important;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .active ~ .tab {
+            top: 120px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabs-container">
+        <div class="tab" id="tab1">
+            Tab 1
+            <div class="tab-content">Content for Tab 1</div>
+        </div>
+        <div class="tab" id="tab2">
+            Tab 2
+            <div class="tab-content">Content for Tab 2</div>
+        </div>
+        <div class="tab" id="tab3">
+            Tab 3
+            <div class="tab-content">Content for Tab 3</div>
+        </div>
+        <div class="tab" id="tab4">
+            Tab 4
+            <div class="tab-content">Content for Tab 4</div>
+        </div>
+    </div>
+
+    <script>
+        const tabs = document.querySelectorAll('.tab');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

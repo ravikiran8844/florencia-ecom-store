@@ -1,8 +1,8 @@
  // Array of announcements
  const announcements = [
-  "CaratLane - A Tanishq Partnership",
-  "New arrivals are now available!",
-  "20% off your first purchase. Use code: WELCOME20",
+  "Florencia Diamonds - From the House of Jewel One",
+  "Diwali Dhamaka Offer - Zero Making Charges on Diamond Jewellery",
+  "Flo with Florencia - Fashionable Jewellery for the Fashionable You",
 ];
 
 let index = 0;
